@@ -1,0 +1,21 @@
+#Logger4j Application Logger
+log4j.rootLogger=DEBUG,file
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=./src/test/resources/system.log 
+log4j.appender.file.maxFileSize=2MB
+log4j.appender.file.maxBackupIndex=5
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{ISO8601} %5p : %L --  %m%n
+log4j.appender.file.Append=false
+log4j.logger.webLogger=DEBUG,dest1,console
+log4j.appender.dest1=org.apache.log4j.RollingFileAppender
+log4j.appender.dest1.maxFileSize=900KB
+log4j.appender.dest1.maxBackupIndex=6
+log4j.appender.dest1.layout=org.apache.log4j.PatternLayout
+log4j.appender.web.layout.ConversionPattern=%d{ISO8601} %5p : %L --  %m%n
+log4j.appender.dest1.File=./src/test/resources/application.log
+log4j.appender.dest1.Append=false
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.Target=System.out
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%d{dd/MM/yyyy HH:mm:ss} %c %m%n
